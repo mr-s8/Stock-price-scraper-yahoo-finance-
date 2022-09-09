@@ -9,9 +9,9 @@ def getPrice(symbol):
     soup = BeautifulSoup(r.content, "html.parser")
     data = etree.HTML(str(soup))
 
-    res = [data.xpath("//*[@id=\"quote-header-info\"]/div[3]/div[1]/div[1]/fin-streamer[1]/text()"),
-           data.xpath("//*[@id=\"quote-header-info\"]/div[3]/div[1]/div[1]/fin-streamer[2]/span/text()"), data.xpath(
-        "//*[@id=\"quote-header-info\"]/div[3]/div[1]/div[1]/fin-streamer[3]/span/text()")]
+    res = [data.xpath("//*[@id=\"quote-header-info\"]/div[3]/div[1]/div[1]/fin-streamer[1]/text()")[0],
+           data.xpath("//*[@id=\"quote-header-info\"]/div[3]/div[1]/div[1]/fin-streamer[2]/span/text()")[0], 
+           data.xpath("//*[@id=\"quote-header-info\"]/div[3]/div[1]/div[1]/fin-streamer[3]/span/text()")[0]]
 
     return res
   
